@@ -6,6 +6,6 @@ class User < ApplicationRecord
   has_many :likes
   has_many :comments
 
-  validates :accountname,  presence: true, length: { maximum: 10 }
+  validates :accountname, presence: true, length: { maximum: 10 }
 
 end
