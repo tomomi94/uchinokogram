@@ -1,0 +1,38 @@
+<%# ヘッダー %>
+
+<div class='main'>
+
+<%# 画面上部の帯部分 %>
+<%= image_tag "FotoJet.jpg", class:"top-image" %>
+
+<%# 新着投稿 %>
+  <div class='tweet-contents'>
+    <h2 class='title'>New Tweet</h2>
+    <ul class='tweet-lists'>
+
+      <% @tweets.each do |tweet| %>
+      <li class='list'>
+        <%= link_to tweet_path(tweet.id) do %>
+        <div class='tweet-img-content'>
+          <%= tweet_tag tweet.image, class: "tweet-img" %>
+        </div>
+        <div class='tweet-info'>
+          <div class='tweet-user'>
+            <span><%= tweet.account.name %></span>
+            <div class='heart-btn'>
+              <%= image_tag "heart.png", class:"heart-icon" %>
+              <span class='heart-count'>0</span>
+            </div>
+          </div>
+        <% end %>
+        </div>
+      </li>
+      <% end %>
+   </ul>
+  </div>
+</div>
+
+<%# 人気投稿順 %>
+
+<%# フッター %>
+<%= render "shared/footer"%>
