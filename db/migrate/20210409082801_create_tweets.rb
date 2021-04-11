@@ -6,6 +6,7 @@ class CreateTweets < ActiveRecord::Migration[6.0]
       t.integer :gender_id
       t.integer :age
       t.references :user,     null: false, foreign_key: true
+      t.timestamps
     end
   end
 end
